@@ -36,6 +36,8 @@ function themechange() {
     }
 }
 
+themeicon.addEventListener("click", themechange);
+
 function type() {
     if (index < texts[count].length) {
         currentText += texts[count].charAt(index);
