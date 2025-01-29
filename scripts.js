@@ -22,6 +22,19 @@ let count = 0; // Index of the current text
 let index = 0; // Index of the current character
 let currentText = ''; // Current text being typed
 let letter = ''; // Current character being typed
+let themeicon = document.getElementById('themeicon')
+
+function themechange() {
+    document.body.classList.toggle("lighttheme");
+    if (document.body.classList.contains("lighttheme")) {
+        themeicon.setAttribute("name", "moon")
+        themeicon.style.color = "black";
+    }
+    else {
+        themeicon.setAttribute("name", "sunny")
+        themeicon.style.color = "white";
+    }
+}
 
 function type() {
     if (index < texts[count].length) {
@@ -70,13 +83,13 @@ form.addEventListener('submit', e => {
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => {
             msg.innerHTML = "Thank You for your response"
-            setTimeout(function(){
+            setTimeout(function () {
                 msg.innerHTML = ""
-            },5000)
+            }, 5000)
             form.reset()
 
         }
-            
-            )
+
+        )
         .catch(error => console.error('Error!', error.message))
 })

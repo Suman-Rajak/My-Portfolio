@@ -96,11 +96,114 @@
 
   --surface-color: #fff;
   --curve: 40;
+  --sub-color: rgb(236, 236, 15);
 
 }
 
 
+.lighttheme {
 
+    /**
+     * COLORS
+     */
+
+    --bg-white: hsla(0, 0%, 98%, 1);
+    /* Soft off-white */
+    --bg-light-gray: rgb(173, 173, 249);
+    /* Light lavender */
+    --bg-jet: hsla(200, 15%, 85%, 1);
+    /* Soft blue-gray */
+    --bg-eerie-black: hsla(210, 30%, 92%, 1);
+    /* Light cool gray */
+    --bg-rich-black-fogra-29: rgb(162, 180, 243);
+    /* Soft periwinkle */
+    --bg-smoky-black: hsla(40, 30%, 96%, 1);
+    /* Warm beige */
+    --bg-black: rgb(209, 225, 245);
+    /* Pale cream */
+
+    /* gradient colors */
+    --gradient-1: linear-gradient(to top, var(--bg-light-gray) 0%, transparent 40%);
+    --gradient-2: radial-gradient(circle at 75% 100%, hsla(40, 90%, 80%, 0.3) 0%, transparent 100%);
+    /* Soft golden glow */
+
+    /* text colors */
+    --text-white: hsla(210, 20%, 20%, 1);
+    /* Dark charcoal */
+    --text-light-gray: hsla(210, 25%, 25%, 1);
+    /* Cool gray */
+    --text-rich-black-fogra-29: hsla(210, 40%, 15%, 1);
+    /* Deep navy */
+    --text-smoky-black: hsla(40, 30%, 20%, 1);
+    /* Dark warm gray */
+    --text-black: rgb(255, 255, 255);
+    /* Very dark gray */
+
+    /* border colors */
+    --border-white: rgb(74, 72, 72);
+    /* Soft light gray */
+    --border-light-gray: rgb(76, 76, 79);
+    /* Lavender-gray */
+    --border-gainsboro: rgb(103, 117, 147);
+    /* Muted gray */
+    --border-eerie-black: rgb(109, 145, 181);
+    /* Cool gray */
+    --border-smoky-black: rgb(72, 61, 36);
+    /* Warm beige-gray */
+
+
+    /**
+     * TYPOGRAPHY
+     */
+
+    /* font family */
+    --fontFamily-recoleta: 'Recoleta';
+    --fontFamily-roboto: 'Roboto', sans-serif;
+
+    /* font size */
+    --fontSize-1: 4.6rem;
+    --fontSize-2: 4.5rem;
+    --fontSize-3: 4rem;
+    --fontSize-4: 3rem;
+    --fontSize-5: 2.4rem;
+    --fontSize-6: 1.8rem;
+    --fontSize-7: 2rem;
+    --fontSize-8: 1.6rem;
+    --fontSize-9: 1.5rem;
+    --fontSize-10: 1.4rem;
+
+    /* font weight */
+    --weight-regular: 400;
+    --weight-medium: 500;
+
+    /**
+     * SPACING
+     */
+
+    --section-spacing: 70px;
+
+    /**
+     * BORDER RADIUS
+     */
+
+    --radius-pill: 500px;
+    --radius-circle: 50%;
+
+    /**
+     * TRANSITION
+     */
+
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease;
+    --transition-3: 1000ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
+    --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+
+    --surface-color: #fff;
+    --curve: 40;
+    --sub-color: rgb(15, 60, 144);
+
+}
 
 
 /*-----------------------------------*\
@@ -197,6 +300,9 @@ body.nav-active {
   background-color: var(--bg-white);
 }
 
+#themeicon{
+  transition: .7s;
+}
 
 
 
@@ -628,7 +734,9 @@ body.nav-active {
   left: 0;
 }
 
-
+#typewriter {
+  color: var(--sub-color);
+}
 
 
 
@@ -766,8 +874,12 @@ body.nav-active {
 .skill-list {
   line-height: .6rem;
   list-style-type: disc;
-  color: white;
+  color: var(--text-white);
   font-size: 2rem;
+}
+
+.skill-list h3 {
+  color: var(--sub-color);
 }
 
 #languagesk {
@@ -820,12 +932,12 @@ body.nav-active {
 }
 
 /* .projectlater { */
-  /* display: none; */
-  /* opacity: 0; */
-  /* Set initial opacity to 0 */
-  /* transition: opacity 0.7s; */
-  /* Define transition for opacity property */
-  /* display: contents; */
+/* display: none; */
+/* opacity: 0; */
+/* Set initial opacity to 0 */
+/* transition: opacity 0.7s; */
+/* Define transition for opacity property */
+/* display: contents; */
 /* } */
 
 .exhibition-card {
@@ -1012,17 +1124,17 @@ body.nav-active {
 .card {
   position: relative;
   display: block;
-  height: 100%;  
+  height: 100%;
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
 }
 
-.card__image {      
+.card__image {
   width: 100%;
   height: auto;
-  
+
 }
 
 .card__overlay {
@@ -1030,8 +1142,8 @@ body.nav-active {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;      
-  border-radius: calc(var(--curve) * 1px);    
+  z-index: 1;
+  border-radius: calc(var(--curve) * 1px);
   background-color: var(--surface-color);
   transform: translateY(100%);
   transition: .2s ease-in-out;
@@ -1047,7 +1159,7 @@ body.nav-active {
   align-items: center;
   gap: 2em;
   padding: 2em;
-  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
   background-color: var(--surface-color);
   transform: translateY(-100%);
   transition: .2s ease-in-out;
@@ -1058,14 +1170,14 @@ body.nav-active {
   height: 80px;
   position: absolute;
   bottom: 100%;
-  right: 0;      
+  right: 0;
   z-index: 1;
 }
 
 .card__arc path {
   fill: var(--surface-color);
   d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}       
+}
 
 .card:hover .card__header {
   transform: translateY(0);
@@ -1074,8 +1186,8 @@ body.nav-active {
 .card__thumb {
   flex-shrink: 0;
   width: 50px;
-  height: 50px;      
-  border-radius: 50%;      
+  height: 50px;
+  border-radius: 50%;
 }
 
 .card__title {
@@ -1087,9 +1199,9 @@ body.nav-active {
 .card__tagline {
   display: block;
   margin: 1em 0;
-  font-family: "MockFlowFont";  
-  font-size: .8em; 
-  color: #D7BDCA;  
+  font-family: "MockFlowFont";
+  font-size: .8em;
+  color: #D7BDCA;
 }
 
 .card__status {
@@ -1101,14 +1213,14 @@ body.nav-active {
   padding: 0 2em 2em;
   margin: 0;
   color: #D7BDCA;
-  font-family: "MockFlowFont";   
+  font-family: "MockFlowFont";
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-}    
+}
 
-.deschover{
+.deschover {
   display: flex;
   justify-content: space-evenly;
   width: 50%;
