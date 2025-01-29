@@ -228,6 +228,7 @@ span,
 input,
 button,
 textarea,
+
 ion-icon {
   display: block;
 }
@@ -262,6 +263,11 @@ ion-icon {
   pointer-events: none;
 }
 
+#themeicon{
+
+  cursor: pointer;
+}
+
 address {
   font-style: normal;
 }
@@ -278,6 +284,10 @@ body {
   font-size: var(--fontSize-8);
   line-height: 1.75;
   overflow: hidden;
+}
+
+body, .header {
+  transition: background-color 1s ease, color .4s ease;
 }
 
 body.loaded {

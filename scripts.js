@@ -24,7 +24,7 @@ let currentText = ''; // Current text being typed
 let letter = ''; // Current character being typed
 let themeicon = document.getElementById('themeicon')
 
-function themechange() {
+themeicon.addEventListener("click", () => {
     document.body.classList.toggle("lighttheme");
     if (document.body.classList.contains("lighttheme")) {
         themeicon.setAttribute("name", "moon")
@@ -34,9 +34,7 @@ function themechange() {
         themeicon.setAttribute("name", "sunny")
         themeicon.style.color = "white";
     }
-}
-
-themeicon.addEventListener("click", themechange);
+})
 
 function type() {
     if (index < texts[count].length) {
