@@ -4,15 +4,16 @@ let index = 0; // Index of the current character
 let currentText = ''; // Current text being typed
 let letter = ''; // Current character being typed
 let themeicon = document.getElementById('themeicon')
+let thmicon = document.getElementById("thmicon")
 
 themeicon.addEventListener("click", () => {
     document.body.classList.toggle("lighttheme");
     if (document.body.classList.contains("lighttheme")) {
-        themeicon.setAttribute("name", "moon")
+        thmicon.setAttribute("name", "moon")
         themeicon.style.color = "black";
     }
     else {
-        themeicon.setAttribute("name", "sunny")
+        thmicon.setAttribute("name", "sunny")
         themeicon.style.color = "white";
     }
 })
