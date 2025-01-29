@@ -1,22 +1,3 @@
-// function loadingmore() {
-//     // Hide the "Load More" button immediately
-//     document.querySelector('#loadmore').style.display = 'none';
-//     document.querySelector('.center-container').style.display = 'none';
-//     document.querySelector('.demo1').style.display = 'none';
-
-//     // Get all elements with the class .projectlater
-//     var elements = document.querySelectorAll('.projectlater');
-
-//     // Loop through each element and gradually change opacity to 1 (fade in)
-//     elements.forEach(function (element) {
-//         element.style.display = 'block'; // Display the element
-//         setTimeout(function () {
-//             element.style.opacity = '1'; // Gradually change opacity to 1
-//         }, 50); // Add a small delay to start the animation
-//     });
-// }
-
-
 const texts = ["Designer", "Developer", "Freelancer"]; // Array of texts to display
 let count = 0; // Index of the current text
 let index = 0; // Index of the current character
